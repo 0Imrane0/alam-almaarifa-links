@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>École Alam Al Maarifa — Liens</title>
+  <meta name="description" content="Retrouvez tous nos liens : Instagram, Facebook, TikTok, WhatsApp et notre site web. École privée à Casablanca — Inscriptions 2026/2027." />
+  <meta property="og:title" content="École Alam Al Maarifa — Liens" />
+  <meta property="og:description" content="Maternelle & Primaire à Casablanca. Inscriptions ouvertes 2026/2027." />
+  <meta property="og:image" content="./logo-white.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --navy-deep: #0D2347;
+      --navy:      #1B3A6B;
+      --gold:      #C5A028;
+      --gold-dim:  #8C7434;
+      --red:       #A01830;
+      --cream:     #FAF8F4;
+      --cream-dim: #C8C0A8;
+      --glass-bg:  rgba(255,255,255,0.055);
+      --glass-border: rgba(197,160,40,0.22);
+      --shadow: 0 8px 40px rgba(0,0,0,0.45);
+      --radius: 18px;
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ─── BODY ─── */
+    body {
+      min-height: 100dvh;
+      background: var(--navy-deep);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 20px 64px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ─── ANIMATED BACKGROUND ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 15% 10%,  rgba(197,160,40,0.10) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 50% at 85% 85%,  rgba(160,24,48,0.08)  0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 50% 50%,  rgba(27,58,107,0.60)  0%, transparent 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Slow-moving particles */
+    .particles {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0;
+      animation: float-up linear infinite;
+    }
+    .particle:nth-child(1)  { width:3px; height:3px; left:12%; animation-duration:18s; animation-delay:0s;   }
+    .particle:nth-child(2)  { width:2px; height:2px; left:28%; animation-duration:22s; animation-delay:4s;   }
+    .particle:nth-child(3)  { width:4px; height:4px; left:44%; animation-duration:16s; animation-delay:8s;   }
+    .particle:nth-child(4)  { width:2px; height:2px; left:60%; animation-duration:24s; animation-delay:2s;   }
+    .particle:nth-child(5)  { width:3px; height:3px; left:76%; animation-duration:20s; animation-delay:6s;   }
+    .particle:nth-child(6)  { width:2px; height:2px; left:88%; animation-duration:19s; animation-delay:10s;  }
+    .particle:nth-child(7)  { width:3px; height:3px; left:35%; animation-duration:26s; animation-delay:14s;  }
+    .particle:nth-child(8)  { width:2px; height:2px; left:55%; animation-duration:21s; animation-delay:3s;   }
+
+    @keyframes float-up {
+      0%   { transform: translateY(100vh) scale(0);   opacity: 0; }
+      10%  { opacity: 0.55; }
+      90%  { opacity: 0.25; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    /* ─── WRAPPER ─── */
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ─── LOGO ─── */
+    .logo-wrap {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: rgba(197,160,40,0.10);
+      border: 1.5px solid rgba(197,160,40,0.30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      box-shadow: 0 0 40px rgba(197,160,40,0.18), 0 0 80px rgba(197,160,40,0.08);
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+    .logo-wrap img {
+      width: 86px;
+      height: 86px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 12px rgba(197,160,40,0.35));
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 40px rgba(197,160,40,0.18), 0 0 80px rgba(197,160,40,0.08); }
+      50%       { box-shadow: 0 0 55px rgba(197,160,40,0.30), 0 0 100px rgba(197,160,40,0.13); }
+    }
+
+    /* ─── HEADER TEXT ─── */
+    .school-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 6vw, 28px);
+      font-weight: 700;
+      color: var(--cream);
+      text-align: center;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+    .school-name-ar {
+      font-size: clamp(14px, 3.5vw, 16px);
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+      text-align: center;
+      direction: rtl;
+    }
+    .tagline {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    /* ─── GOLD DIVIDER ─── */
+    .divider {
+      width: 64px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 2px;
+      margin: 20px 0 28px;
+    }
+
+    /* ─── BADGE ─── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(197,160,40,0.12);
+      border: 1px solid rgba(197,160,40,0.30);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: blink 1.6s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.2; }
+    }
+
+    /* ─── LINKS ─── */
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--cream);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.22s cubic-bezier(.25,.46,.45,.94),
+                  background 0.22s ease,
+                  border-color 0.22s ease,
+                  box-shadow 0.22s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .link-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(197,160,40,0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      pointer-events: none;
+    }
+    .link-card:hover,
+    .link-card:focus-visible {
+      transform: translateY(-3px) scale(1.012);
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(197,160,40,0.50);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.40), 0 0 20px rgba(197,160,40,0.12);
+    }
+    .link-card:hover::after { opacity: 1; }
+    .link-card:active { transform: translateY(0) scale(1.005); }
+
+    /* Icon circle */
+    .icon-wrap {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.22s ease;
+    }
+    .link-card:hover .icon-wrap { transform: scale(1.08); }
+    .icon-wrap svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Platform colors */
+    .icon--instagram { background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%); }
+    .icon--facebook  { background: #1877F2; }
+    .icon--tiktok    { background: #000; border: 1px solid rgba(255,255,255,0.10); }
+    .icon--whatsapp  { background: #25D366; }
+    .icon--website   { background: linear-gradient(135deg, var(--navy) 0%, var(--gold-dim) 100%); }
+
+    /* Text */
+    .link-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .link-label {
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .link-sub {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--cream-dim);
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Arrow */
+    .link-arrow {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      color: var(--gold);
+      opacity: 0.60;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .link-card:hover .link-arrow { opacity: 1; transform: translateX(4px); }
+
+    /* ─── SECTION LABEL ─── */
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.70;
+      margin: 28px 0 12px;
+      align-self: flex-start;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-address {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--cream-dim);
+      line-height: 1.6;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+      margin-top: 8px;
+    }
+    .footer-divider {
+      width: 32px;
+      height: 1px;
+      background: rgba(197,160,40,0.25);
+      margin: 10px 0;
+    }
+
+    /* ─── ENTRANCE ANIMATION ─── */
+    .wrapper > * {
+      animation: fade-up 0.6s cubic-bezier(.25,.46,.45,.94) both;
+    }
+    .wrapper > *:nth-child(1)  { animation-delay: 0.05s; }
+    .wrapper > *:nth-child(2)  { animation-delay: 0.10s; }
+    .wrapper > *:nth-child(3)  { animation-delay: 0.15s; }
+    .wrapper > *:nth-child(4)  { animation-delay: 0.20s; }
+    .wrapper > *:nth-child(5)  { animation-delay: 0.25s; }
+    .links .link-card:nth-child(1) { animation-delay: 0.30s; }
+    .links .link-card:nth-child(2) { animation-delay: 0.38s; }
+    .links .link-card:nth-child(3) { animation-delay: 0.46s; }
+    .links .link-card:nth-child(4) { animation-delay: 0.54s; }
+    .links .link-card:nth-child(5) { animation-delay: 0.62s; }
+    .links .link-card            { animation: fade-up 0.5s cubic-bezier(.25,.46,.45,.94) both; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 400px) {
+      body { padding: 36px 14px 52px; }
+      .logo-wrap { width: 94px; height: 94px; }
+      .logo-wrap img { width: 72px; height: 72px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating particles -->
+  <div class="particles" aria-hidden="true">
+    <div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div>
+  </div>
+
+  <div class="wrapper">
+
+    <!-- Logo -->
+    <div class="logo-wrap">
+      <img src="./logo-white.png" alt="Logo École Alam Al Maarifa" onerror="this.style.display='none'" />
+    </div>
+
+    <!-- School name -->
+    <h1 class="school-name">École Alam Al Maarifa</h1>
+    <p class="school-name-ar">مدرسة عالم المعرفة</p>
+    <p class="tagline">Vers l'Excellence</p>
+
+    <!-- Gold divider -->
+    <div class="divider"></div>
+
+    <!-- Badge -->
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Inscriptions ouvertes 2026/2027
+    </div>
+
+    <!-- ── SOCIAL LINKS ── -->
+    <p class="section-label">Nos réseaux</p>
+
+    <div class="links" role="list">
+
+      <!-- Instagram -->
+      <a class="link-card"
+         href="https://instagram.com/ecole.alam.almaarifa"
+         target="_blank"
+         rel="noopener noreferrer"
+         role="listitem"
+         id="link-instagram"
+         aria-label="Suivez-nous sur Instagram">
+        <div class="icon-wrap icon--instagram" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-label">Instagram</div>
+          <div class="link-sub">@ecole.alam.almaarifa</div>
+        </div>
+        <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <!-- Facebook -->
+      <a class="link-card"
+         href="https://facebook.com/ecole.alam.almaarifa"
+         target="_blank"
+         rel="noopener noreferrer"
+         role="listitem"
+         id="link-facebook"
+         aria-label="Retrouvez-nous sur Facebook">
+        <div class="icon-wrap icon--facebook" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-label">Facebook</div>
+          <div class="link-sub">École Alam Al Maarifa</div>
+        </div>
+        <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a class="link-card"
+         href="https://tiktok.com/@ecole.alam.almaarifa"
+         target="_blank"
+         rel="noopener noreferrer"
+         role="listitem"
+         id="link-tiktok"
+         aria-label="Suivez-nous sur TikTok">
+        <div class="icon-wrap icon--tiktok" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.65a8.18 8.18 0 0 0 4.78 1.52v-3.4a4.85 4.85 0 0 1-1.01-.08z"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-label">TikTok</div>
+          <div class="link-sub">@ecole.alam.almaarifa</div>
+        </div>
+        <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <!-- WhatsApp -->
+      <a class="link-card"
+         href="https://wa.me/212669911090?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20les%20inscriptions%202026%2F2027%20%C3%A0%20l%27%C3%A9cole%20Alam%20Al%20Maarifa."
+         target="_blank"
+         rel="noopener noreferrer"
+         role="listitem"
+         id="link-whatsapp"
+         aria-label="Contactez-nous sur WhatsApp">
+        <div class="icon-wrap icon--whatsapp" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-label">WhatsApp — Inscriptions</div>
+          <div class="link-sub">+212 669 911 090</div>
+        </div>
+        <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <!-- Website -->
+      <a class="link-card"
+         href="https://alamalmaarifa.me"
+         target="_blank"
+         rel="noopener noreferrer"
+         role="listitem"
+         id="link-website"
+         aria-label="Visitez notre site officiel"
+         style="border-color: rgba(197,160,40,0.45); background: rgba(197,160,40,0.07);">
+        <div class="icon-wrap icon--website" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-label" style="color: #f0d98a;">Site officiel</div>
+          <div class="link-sub">alamalmaarifa.me — Bientôt en ligne</div>
+        </div>
+        <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#C5A028;">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+    </div><!-- /links -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-divider"></div>
+      <p class="footer-address">
+        66 boulevard Khalifa Ben Esmail<br/>
+        Hay Rahma, Casablanca 20650
+      </p>
+      <p class="footer-copy">© 2026 École Alam Al Maarifa · Tous droits réservés</p>
+    </footer>
+
+  </div><!-- /wrapper -->
+
+</body>
+</html>
