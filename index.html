@@ -157,6 +157,14 @@
       background: radial-gradient(circle, rgba(197,160,40,0.18) 0%, transparent 70%);
       animation: pulse-ring 4s ease-in-out infinite;
     }
+    .eagle-ring::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 20, 50, 0.25) 10%, transparent 60%);
+      z-index: -1;
+    }
     @keyframes pulse-ring {
       0%, 100% { transform: scale(1);    opacity: 0.9; }
       50%       { transform: scale(1.06); opacity: 0.4; }
@@ -197,14 +205,14 @@
     }
 
     .logo-main {
-      width: 100px;
-      height: 100px;
+      width: 52px;
+      height: 52px;
       object-fit: contain;
       filter: 
         drop-shadow(0 0 10px rgba(255, 20, 50, 0.8))
         drop-shadow(0 0 25px rgba(255, 20, 50, 0.5))
         drop-shadow(0 0 40px rgba(200, 0, 0, 0.4));
-      margin-bottom: 18px;
+      margin-bottom: 12px;
     }
 
     .school-name {
@@ -518,7 +526,6 @@
     @media (min-width: 600px) {
       .links-wrap, .pillars { max-width: 520px; padding: 0 24px; }
       .identity { margin-top: 72px; }
-      .logo-main { width: 120px; height: 120px; }
       .tagline { font-size: 18px; }
     }
   </style>
