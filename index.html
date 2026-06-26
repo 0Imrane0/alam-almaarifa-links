@@ -123,23 +123,28 @@
     }
 
     /* ═══════════════════════════════════════
-       HERO — EAGLE SECTION
+       BACKGROUND EAGLE 3D
     ═══════════════════════════════════════ */
-    .hero {
-      width: 100%;
-      position: relative;
+    .eagle-bg {
+      position: fixed;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(900px, 150vw);
+      height: min(900px, 150vw);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.25;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      padding-top: 48px;
-      padding-bottom: 0;
+      justify-content: center;
     }
 
     /* Eagle glow ring */
     .eagle-ring {
       position: relative;
-      width: min(340px, 90vw);
-      height: min(340px, 90vw);
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -147,18 +152,10 @@
     .eagle-ring::before {
       content: '';
       position: absolute;
-      inset: 0;
+      inset: 20%;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(197,160,40,0.18) 0%, transparent 70%);
-      animation: pulse-ring 3.5s ease-in-out infinite;
-    }
-    .eagle-ring::after {
-      content: '';
-      position: absolute;
-      inset: -20px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(197,160,40,0.07) 0%, transparent 70%);
-      animation: pulse-ring 3.5s ease-in-out infinite 1.2s;
+      animation: pulse-ring 4s ease-in-out infinite;
     }
     @keyframes pulse-ring {
       0%, 100% { transform: scale(1);    opacity: 0.9; }
@@ -167,38 +164,27 @@
 
     /* 3D Model Viewer */
     model-viewer {
-      width: min(320px, 88vw);
-      height: min(320px, 88vw);
+      width: 100%;
+      height: 100%;
       background: transparent;
       --poster-color: transparent;
-      z-index: 2;
     }
 
     /* Fallback image (shown if model-viewer fails / JS disabled) */
     .eagle-fallback {
-      width: min(260px, 80vw);
-      height: min(260px, 80vw);
+      width: 80%;
+      height: 80%;
       object-fit: contain;
       filter:
         drop-shadow(0 0 32px rgba(197,160,40,0.55))
         drop-shadow(0 0 80px rgba(197,160,40,0.22));
       animation: float 5s ease-in-out infinite;
-      display: none; /* hidden by default, shown via JS if model fails */
+      display: none;
     }
     .eagle-fallback.visible { display: block; }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50%       { transform: translateY(-10px); }
-    }
-
-    /* ── Bottom fade from hero into identity block ── */
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 80px;
-      background: linear-gradient(to bottom, transparent, var(--bg));
-      pointer-events: none;
     }
 
     /* ═══════════════════════════════════════
@@ -207,20 +193,20 @@
     .identity {
       text-align: center;
       padding: 0 20px;
-      margin-top: -12px;
+      margin-top: 54px;
     }
 
-    .logo-small {
-      width: 52px;
-      height: 52px;
+    .logo-main {
+      width: 100px;
+      height: 100px;
       object-fit: contain;
-      filter: drop-shadow(0 0 12px rgba(197,160,40,0.40));
-      margin-bottom: 12px;
+      filter: drop-shadow(0 0 16px rgba(197,160,40,0.50));
+      margin-bottom: 18px;
     }
 
     .school-name {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(24px, 6.5vw, 32px);
+      font-size: clamp(26px, 7vw, 36px);
       font-weight: 700;
       color: var(--cream);
       letter-spacing: 0.02em;
@@ -228,7 +214,7 @@
     }
 
     .school-arabic {
-      font-size: clamp(13px, 3.5vw, 15px);
+      font-size: clamp(14px, 4vw, 18px);
       font-weight: 600;
       color: var(--gold);
       letter-spacing: 0.08em;
@@ -237,12 +223,14 @@
     }
 
     .tagline {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.22em;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--cream-dim);
-      margin-top: 8px;
+      color: var(--gold-light);
+      margin-top: 14px;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
     }
 
     /* ═══════════════════════════════════════
@@ -509,14 +497,13 @@
        RESPONSIVE
     ═══════════════════════════════════════ */
     @media (max-width: 380px) {
-      model-viewer { width: 88vw; height: 88vw; }
-      .eagle-ring  { width: 88vw; height: 88vw; }
-      .school-name { font-size: 21px; }
+      .school-name { font-size: 24px; }
     }
     @media (min-width: 600px) {
       .links-wrap, .pillars { max-width: 520px; padding: 0 24px; }
-      model-viewer { width: 360px; height: 360px; }
-      .eagle-ring  { width: 360px; height: 360px; }
+      .identity { margin-top: 72px; }
+      .logo-main { width: 120px; height: 120px; }
+      .tagline { font-size: 18px; }
     }
   </style>
 </head>
@@ -534,43 +521,39 @@
     <div class="p"></div>
   </div>
 
+  <!-- ══ BACKGROUND 3D EAGLE ══ -->
+  <div class="eagle-bg" aria-hidden="true">
+    <div class="eagle-ring" id="eagleRing">
+      <!-- 3D GLB eagle (Google model-viewer) -->
+      <model-viewer
+        id="eagleModel"
+        src="./eagle.glb"
+        alt="Aigle emblème"
+        auto-rotate
+        rotation-per-second="18deg"
+        disable-zoom
+        disable-pan
+        interaction-prompt="none"
+        environment-image="neutral"
+        exposure="1.6"
+        shadow-intensity="0"
+        camera-orbit="0deg 72deg 2.2m"
+      ></model-viewer>
+      <!-- Fallback image if model fails -->
+      <img
+        id="eagleFallback"
+        class="eagle-fallback"
+        src="./eagle-hero.png"
+        alt="Aigle emblème"
+      />
+    </div>
+  </div>
+
   <div class="page">
-
-    <!-- ══ HERO — 3D EAGLE ══ -->
-    <section class="hero" aria-label="Emblème de l'école">
-      <div class="eagle-ring" id="eagleRing">
-
-        <!-- 3D GLB eagle (Google model-viewer) -->
-        <model-viewer
-          id="eagleModel"
-          src="./eagle.glb"
-          alt="Aigle emblème École Alam Al Maarifa"
-          auto-rotate
-          rotation-per-second="18deg"
-          camera-controls
-          disable-zoom
-          disable-pan
-          interaction-prompt="none"
-          environment-image="neutral"
-          exposure="1.6"
-          shadow-intensity="0"
-          camera-orbit="0deg 72deg 2.2m"
-          aria-label="Modèle 3D de l'aigle emblème"
-        ></model-viewer>
-
-        <!-- Fallback image if model fails -->
-        <img
-          id="eagleFallback"
-          class="eagle-fallback"
-          src="./eagle-hero.png"
-          alt="Aigle emblème École Alam Al Maarifa"
-        />
-      </div>
-    </section>
 
     <!-- ══ IDENTITY ══ -->
     <div class="identity" data-anim>
-      <img class="logo-small" src="./logo-white.png" alt="Logo" />
+      <img class="logo-main" src="./logo-white.png" alt="Logo" />
       <h1 class="school-name">École Alam Al Maarifa</h1>
       <p class="school-arabic">مدرسة عالم المعرفة</p>
       <p class="tagline">Vers l'Excellence</p>
