@@ -160,10 +160,11 @@
     .eagle-ring::after {
       content: '';
       position: absolute;
-      inset: 0;
+      inset: -10%;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 20, 50, 0.25) 10%, transparent 60%);
+      background: radial-gradient(circle, rgba(255, 20, 50, 0.15) 0%, rgba(160, 24, 48, 0.1) 40%, transparent 70%);
       z-index: -1;
+      animation: pulse-ring 6s ease-in-out infinite alternate-reverse;
     }
     @keyframes pulse-ring {
       0%, 100% { transform: scale(1);    opacity: 0.9; }
@@ -205,14 +206,11 @@
     }
 
     .logo-main {
-      width: 52px;
-      height: 52px;
+      width: 100px;
+      height: 100px;
       object-fit: contain;
-      filter: 
-        drop-shadow(0 0 10px rgba(255, 20, 50, 0.8))
-        drop-shadow(0 0 25px rgba(255, 20, 50, 0.5))
-        drop-shadow(0 0 40px rgba(200, 0, 0, 0.4));
-      margin-bottom: 12px;
+      filter: drop-shadow(0 0 16px rgba(197,160,40,0.50));
+      margin-bottom: 18px;
     }
 
     .school-name {
@@ -526,6 +524,7 @@
     @media (min-width: 600px) {
       .links-wrap, .pillars { max-width: 520px; padding: 0 24px; }
       .identity { margin-top: 72px; }
+      .logo-main { width: 120px; height: 120px; }
       .tagline { font-size: 18px; }
     }
   </style>
